@@ -1,9 +1,18 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+    <h1> Mac's portfolio is here........</h1>
 
-<h1> Mac's portfolio is here........</h1>
+
+<br>
 
 {% load static %}
 
+<a href="{% url 'blog:all_blogs'  %}">Link for all my blogs</a>
+
+<br>
 <a href="{% static 'portfolio/brandao.pdf' %}">Resume</a>
+
+<br>
 
 <img src="{% static 'portfolio/boy.jpg' %}">
 
@@ -22,5 +31,5 @@
 {% endif %}
 {% endfor %}
 
-
+{% endblock %}
     
