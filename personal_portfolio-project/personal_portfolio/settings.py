@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#21(!1bw9=*)=z+7*40k#u-f0b(9e2e87kq+bn!oc3d*kvv#8*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shah476.pythonanywhere.com']
 
 
 # Application definition
@@ -116,15 +116,22 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+import os
 
 STATIC_URL = '/static/'
 MEDIA_URL = 'media/'
-
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-import os
+
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+try:
+    from .local_settings import *
+
+except ImportError:
+    print ("looks like it production env as no local file")
