@@ -128,7 +128,6 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 try:
@@ -136,6 +135,4 @@ try:
 
 except ImportError:
     print ("looks like it production env as no local file")
-=======
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
->>>>>>> 36358ea54293bacc6ab58eb03c6bae33d1fdd78d
