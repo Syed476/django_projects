@@ -40,4 +40,8 @@ def loginuser(request):
             return redirect('currenttodos')
 
 def currenttodos(request):
-    return render(request,'todo/currenttodos.html')
+    if request.method == 'GET':
+        return render(request,'todo/currenttodos.html',{'form':AuthenticationForm})
+    
+    else:
+        pass

@@ -3,6 +3,13 @@
 
 
 {% block content %}
-current todos
+
+<h> Login </h>
+<h2>{{ error }}</h2>
+<form method="post">
+    {% csrf_token %}
+{{form.as_p}}
+<button type="submit"> Login </button>
+</form>
 
 {% endblock %}
